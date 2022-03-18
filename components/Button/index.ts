@@ -1,2 +1,2 @@
 export {Button} from "./Button";
-export {ButtonSecondary} from "./ButtonSecondary";
+export {ButtonDisabled} from "./ButtonDisabled";
