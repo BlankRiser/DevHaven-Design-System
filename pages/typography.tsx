@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { Button } from "../components";
 
-const Components: NextPage = () => {
+const Typography: NextPage = () => {
   return (
     <div className="">
       <Head>
@@ -10,9 +10,8 @@ const Components: NextPage = () => {
         <meta name="components" content="DevHaven Custom Compoenets" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Button>Primary</Button>
     </div>
   );
 };
 
-export default Components;
+export default Typography;
