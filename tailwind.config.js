@@ -10,6 +10,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ["Inter var", "sans-serif"],
+      cursive: ["'Quicksand'"],
     },
     screens: {
       sm: "640px",
