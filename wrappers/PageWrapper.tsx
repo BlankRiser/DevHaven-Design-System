@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { ThemeToggle } from "../members/ThemeToggle";
 
 interface Props {
   children: ReactNode;
@@ -7,6 +8,7 @@ interface Props {
 export function PageWrapper({ children }: Props) {
   return (
     <div className="h-screen max-w-3xl px-4 mx-auto sm:px-6 xl:max-w-7xl xl:px-0 flex flex-col justify-center items-center ">
+      <ThemeToggle />
       {children}
     </div>
   );

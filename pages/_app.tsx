@@ -1,14 +1,15 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { PageWrapper } from "../wrappers/PageWrapper";
+import { ThemeProvider } from "next-themes";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <div className="bg-gradient-to-r from-red-02 to-blue-02">
+    <ThemeProvider defaultTheme="system" attribute="class">
       <PageWrapper>
         <Component {...pageProps} />
       </PageWrapper>
-    </div>
+    </ThemeProvider>
   );
 }
 

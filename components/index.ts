@@ -1,2 +1,2 @@
-export {Button, ButtonDisabled} from './Button';
+export {Button} from './Button';
 export {Search} from './Search';
