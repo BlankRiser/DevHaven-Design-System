@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import Add from "../../icons/Add";
 
 interface ButtonProps {
   children: ReactNode;
