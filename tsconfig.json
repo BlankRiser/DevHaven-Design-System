@@ -1,5 +1,16 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      // Not needed anymore because of the way I am managing components
+      "@/components/*": ["components/*"],
+      "@/pages/*": ["pages/*"],
+      "@/layouts/*": ["layouts/*"],
+      "@/members/*": ["members/*"],
+      "@/styles/*": ["styles/*"],
+      "@/wrappers/*": ["wrappers/*"],
+      "@/icons/*": ["icons/*"]
+    },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
