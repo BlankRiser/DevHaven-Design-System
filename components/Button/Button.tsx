@@ -35,10 +35,79 @@ export function Button({
 
   const primaryColors = `bg-blue-600 focus:outline-[1px] focus:outline-blue-600 hover:bg-blue-700 active:bg-blue-800 text-sm font-medium text-white border-[1px] border-transparent focus:outline-none`;
 
+  if (isSecondary && isDisabled) {
+    return (
+      <button
+        type="button"
+        disabled
+        onClick={onClick}
+        onFocus={onFocus}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+        style={style}
+        className={` h-12 rounded-sm flex justify-center items-center gap-4 py-3 px-6 
+        cursor-not-allowed bg-transparent text-gray-400 border border-gray-400 `}
+      >
+        {children}
+      </button>
+    );
+  }
+
+  if (isSecondary) {
+    return (
+      <button
+        type="button"
+        onClick={onClick}
+        onFocus={onFocus}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+        style={style}
+        className={`h-12 rounded-sm flex justify-center items-center gap-4 py-3 px-6 
+        bg-transparent focus:outline-[1px] focus:outline-blue-600 hover:bg-blue-600/10 active:bg-blue-800/10 text-sm font-medium text-blue-600 border-[1px] border-blue-600 focus:outline-none`}
+      >
+        {children}
+      </button>
+    );
+  }
+  if (isGhost && isDisabled) {
+    return (
+      <button
+        type="button"
+        disabled
+        onClick={onClick}
+        onFocus={onFocus}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+        style={style}
+        className={`h-12 rounded-sm flex justify-center items-center gap-4 py-3 px-6 
+        cursor-not-allowed bg-transparent text-gray-400`}
+      >
+        {children}
+      </button>
+    );
+  }
+  if (isGhost) {
+    return (
+      <button
+        type="button"
+        onClick={onClick}
+        onFocus={onFocus}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+        style={style}
+        className={`h-12 rounded-sm flex justify-center items-center gap-4 py-3 px-6 
+        bg-transparent focus:outline-[1px] focus:outline-blue-600 hover:bg-gray-100 active:bg-gray-200 text-sm font-medium text-blue-600 focus:outline-none`}
+      >
+        {children}
+      </button>
+    );
+  }
+
   if (isDisabled) {
     return (
       <button
         type="button"
+        disabled
         onClick={onClick}
         onFocus={onFocus}
         onMouseEnter={onMouseEnter}
@@ -51,27 +120,15 @@ export function Button({
     );
   }
 
-  if (isSecondary && isDisabled) {
-    const buttonStyle = ` h-12 rounded-sm flex justify-center items-center gap-4 py-3 px-6 
-        bg-transparent border border-blue-600 text-blue-600 hover:bg-blue-600/10 active:bg-blue-800/10 focus:outline-[1px] focus:outline-blue-600 `;
-  } else if (isSecondary) {
-    const buttonStyle = ` 
-    bg-transparent border border-blue-600 text-blue-600 hover:bg-blue-600/10 active:bg-blue-800/10 focus:outline-[1px] focus:outline-blue-600`;
-  }
-
   return (
     <button
       type="button"
       onClick={onClick}
+      onFocus={onFocus}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
       style={style}
-      className={` h-12 rounded-sm flex justify-center items-center gap-4 py-3 px-6
-      ${isDisabled && !isSecondary ? disabledColors : primaryColors}
-      ${
-        isSecondary
-          ? "bg-transparent border border-blue-600 text-blue-600 hover:bg-blue-600/10 active:bg-blue-800/10 focus:outline-[1px] focus:outline-blue-600 "
-          : ""
-      }
-      `}
+      className={` h-12 rounded-sm flex justify-center items-center gap-4 py-3 px-6 bg-blue-600 focus:outline-[1px] focus:outline-blue-600 hover:bg-blue-700 active:bg-blue-800 text-sm font-medium text-white border-[1px] border-transparent focus:outline-none`}
     >
       {children}
     </button>

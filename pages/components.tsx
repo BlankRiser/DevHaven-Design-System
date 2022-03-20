@@ -14,15 +14,23 @@ const Components: NextPage = () => {
       </Head>
       <ComponentWrapper description="Button Variants">
         <Button>
-          <Add />
+          <Add className="fill-gray-50" width={10} height={10} />
           Primary Icon
         </Button>
 
         <Button>Primary</Button>
-        <Button isDisabled>Disabled</Button>
+        <Button isDisabled>Disabled Primary</Button>
+        <Button isSecondary>
+          <Add className="fill-blue-600" width={10} height={10} />
+          Secondary
+        </Button>
         <Button isSecondary>Secondary</Button>
         <Button isSecondary isDisabled>
-          Secondary
+          Disabled Secondary
+        </Button>
+        <Button isGhost>Ghost</Button>
+        <Button isGhost isDisabled>
+          Disabled Ghost
         </Button>
       </ComponentWrapper>
     </>

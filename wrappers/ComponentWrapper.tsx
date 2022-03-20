@@ -7,7 +7,7 @@ interface Props {
 export function ComponentWrapper({ children, description }: Props) {
   return (
     <div
-      className="rounded-lg my-2 py-12 relative w-full  
+      className="rounded-lg m-2 py-12 p-2 relative  
     bg-gray-100 dark:bg-gray-700
     hover:bg-gray-100/50  dark:hover:bg-gray-700/90
     hover:border 

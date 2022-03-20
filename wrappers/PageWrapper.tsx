@@ -10,12 +10,14 @@ interface Props {
 export function PageWrapper({ children }: Props) {
   const { pathname } = useRouter();
   return (
-    <div className="h-screen max-w-3xl m-4 mx-auto sm:px-6 xl:max-w-[90rem] xl:px-0 flex flex-col items-center ">
-      <nav className="flex items-center gap-2 p-2 text-gray-600 dark:text-gray-300">
+    <div className="h-screen max-w-7xl m-4 mx-auto sm:px-6 xl:max-w-[90rem] xl:px-0 flex flex-col items-center ">
+      <nav className="flex items-center gap-4 m-2 text-gray-600 dark:text-gray-300">
         <Link href="/">
           <a
             className={`${
-              pathname === "/" ? "px-1 border-b border-gray-300" : ""
+              pathname === "/"
+                ? " border-b border-blue-600"
+                : "border-b border-gray-200"
             }`}
           >
             Home{" "}
@@ -24,7 +26,9 @@ export function PageWrapper({ children }: Props) {
         <Link href="/typography">
           <a
             className={`${
-              pathname === "/typography" ? "px-1 border-b border-gray-300" : ""
+              pathname === "/typography"
+                ? " border-b border-blue-600"
+                : "border-b border-gray-200"
             }`}
           >
             Typography
@@ -33,7 +37,9 @@ export function PageWrapper({ children }: Props) {
         <Link href="/components">
           <a
             className={`${
-              pathname === "/components" ? "px-1 border-b border-gray-300" : ""
+              pathname === "/components"
+                ? " border-b border-blue-600"
+                : "border-b border-gray-200"
             }`}
           >
             Components
