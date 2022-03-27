@@ -6,7 +6,7 @@ const Typography: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Create Next App</title>
+        <title>Midas - Typography</title>
         <meta name="components" content="DevHaven Custom Compoenets" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -65,7 +65,7 @@ const Typography: NextPage = () => {
         </div>
         <div className="flex flex-col md:flex-row md:items-center">
           <div className="md:w-1/4 flex flex-row md:flex-col justify-between md:justify-start items-center md:items-start">
-            <h3 className="w-1/2 text-[2rem] leading-[130%] font-normal my-1">
+            <h3 className="w-1/2 text-[2rem]  leading-[130%] font-normal my-1">
               H3
             </h3>
             <div className="w-1/2">

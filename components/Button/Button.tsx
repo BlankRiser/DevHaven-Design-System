@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
+import { HTMLAttributes, ReactNode } from "react";
 
-interface ButtonProps {
+interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   style?: React.CSSProperties;
   isDisabled?: boolean;
@@ -28,25 +28,27 @@ export function Button({
   onFocus,
   onMouseEnter,
   onMouseLeave,
+  ...props
 }: ButtonProps) {
   const universal = `h-12 rounded-sm flex justify-center items-center gap-4 py-3 px-6`;
 
-  const disabledColors = `cursor-not-allowed bg-gray-200 text-gray-400`;
+  const disabledColors = `cursor-not-allowed bg-gray-02 text-gray-04`;
 
-  const primaryColors = `bg-blue-600 focus:outline-[1px] focus:outline-blue-600 hover:bg-blue-700 active:bg-blue-800 text-sm font-medium text-white border-[1px] border-transparent focus:outline-none`;
+  const primaryColors = `bg-blue-06 focus:outline-[1px] focus:outline-blue-06 hover:bg-blue-07 active:bg-blue-08 text-sm font-medium text-white border-[1px] border-transparent focus:outline-none`;
 
   if (isSecondary && isDisabled) {
     return (
       <button
         type="button"
         disabled
+        {...props}
         onClick={onClick}
         onFocus={onFocus}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
         style={style}
-        className={` h-12 rounded-sm flex justify-center items-center gap-4 py-3 px-6 
-        cursor-not-allowed bg-transparent text-gray-400 border border-gray-400 `}
+        className={` 
+        cursor-not-allowed bg-transparent text-gray-04 border border-gray-04 `}
       >
         {children}
       </button>
@@ -57,13 +59,14 @@ export function Button({
     return (
       <button
         type="button"
+        {...props}
         onClick={onClick}
         onFocus={onFocus}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
         style={style}
-        className={`h-12 rounded-sm flex justify-center items-center gap-4 py-3 px-6 
-        bg-transparent focus:outline-[1px] focus:outline-blue-600 hover:bg-blue-600/10 active:bg-blue-800/10 text-sm font-medium text-blue-600 border-[1px] border-blue-600 focus:outline-none`}
+        className={` 
+        bg-transparent focus:outline-[1px] focus:outline-blue-06 hover:bg-blue-06/10 active:bg-blue-08/10 text-sm font-medium text-blue-06 border-[1px] border-blue-06 focus:outline-none`}
       >
         {children}
       </button>
@@ -73,14 +76,15 @@ export function Button({
     return (
       <button
         type="button"
+        {...props}
         disabled
         onClick={onClick}
         onFocus={onFocus}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
         style={style}
-        className={`h-12 rounded-sm flex justify-center items-center gap-4 py-3 px-6 
-        cursor-not-allowed bg-transparent text-gray-400`}
+        className={`
+        cursor-not-allowed bg-transparent text-gray-04`}
       >
         {children}
       </button>
@@ -90,13 +94,14 @@ export function Button({
     return (
       <button
         type="button"
+        {...props}
         onClick={onClick}
         onFocus={onFocus}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
         style={style}
-        className={`h-12 rounded-sm flex justify-center items-center gap-4 py-3 px-6 
-        bg-transparent focus:outline-[1px] focus:outline-blue-600 hover:bg-gray-100 active:bg-gray-200 text-sm font-medium text-blue-600 focus:outline-none`}
+        className={`
+        bg-transparent focus:outline-[1px] focus:outline-blue-06 hover:bg-gray-100 active:bg-gray-200 text-sm font-medium text-blue-06 focus:outline-none`}
       >
         {children}
       </button>
@@ -108,12 +113,13 @@ export function Button({
       <button
         type="button"
         disabled
+        {...props}
         onClick={onClick}
         onFocus={onFocus}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
         style={style}
-        className={`  ${universal} ${disabledColors}`}
+        className={`   ${disabledColors}`}
       >
         {children}
       </button>
@@ -123,12 +129,13 @@ export function Button({
   return (
     <button
       type="button"
-      onClick={onClick}
+      // onClick={onClick}
+      {...props}
       onFocus={onFocus}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       style={style}
-      className={` h-12 rounded-sm flex justify-center items-center gap-4 py-3 px-6 bg-blue-600 focus:outline-[1px] focus:outline-blue-600 hover:bg-blue-700 active:bg-blue-800 text-sm font-medium text-white border-[1px] border-transparent focus:outline-none`}
+      className={`  ${primaryColors}`}
     >
       {children}
     </button>

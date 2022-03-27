@@ -6,3 +6,27 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+
+@layer base {
+  button {
+    @apply h-12 rounded-sm flex justify-center items-center gap-4 py-3 px-6;
+  }
+  h1 {
+    @apply text-6xl font-medium;
+  }
+  h2 {
+    @apply text-5xl font-normal;
+  }
+  h3 {
+    @apply text-4xl font-normal;
+  }
+  h4 {
+    @apply text-2xl font-normal;
+  }
+  h5 {
+    @apply text-xl font-medium;
+  }
+  p {
+    @apply text-body-01 font-normal;
+  }
+}
